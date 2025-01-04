@@ -1,6 +1,6 @@
 # **iNoted Website** - Discover Effortless Note-Taking
 
-![iNoted Git](./public/git.png)
+![iNoted Site](./src/assets/readme.png)
 
 The **iNoted Website** serves as the official landing page for the **iNoted** mobile app, offering users a detailed overview of the app’s features, benefits, and functionality. It’s designed to provide quick access to information about the app and guide visitors on how to download it.
 
