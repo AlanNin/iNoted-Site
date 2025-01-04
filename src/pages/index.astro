@@ -1,11 +1,406 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Navbar from "~/components/navbar.astro";
+import AppLogo from "~/assets/logo.png";
+import PlayStoreLogo from "~/assets/playstore.png";
+import AppStoreLogo from "~/assets/appstore.png";
+import DemoPlaceholder from "~/assets/demo-placeholder.png";
+import {
+  Github,
+  Linkedin,
+  Zap,
+  FolderClosed,
+  Shield,
+  WifiOff,
+  Mail,
+  Download,
+  Apple,
+  PlayCircle,
+  Smartphone,
+  ExternalLink,
+} from "lucide-astro";
+import { Image } from "astro:assets";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="iNoted | Simple Note-Taking">
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section
+    class="my-10 md:my-20 flex flex-col items-center justify-center h-full gap-4 md:gap-6 px-4"
+  >
+    <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+      Your Personal Note-Taking Assistant
+    </span>
+    <h1
+      class="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-700 text-center max-w-4xl"
+    >
+      Quick & Intuitive Note-Taking
+    </h1>
+    <p
+      class="max-w-3xl text-center text-slate-600 leading-relaxed text-base md:text-lg"
+    >
+      Transform your note-taking experience! Enjoy secure, effortless
+      organization with customizable notebooks. Elevate your productivity and
+      keep your ideas safe.
+    </p>
+    <div class="flex gap-4 mt-4">
+      <a
+        href="#features"
+        class="border border-slate-500 hover:border-primary hover:text-primary px-8 py-3 rounded-full font-medium transition-all"
+      >
+        Learn More
+      </a>
+    </div>
+    <div
+      class="mt-8 relative w-full max-w-4xl overflow-hidden rounded-xl lg:rounded-2xl shadow-2xl cursor-pointer"
+      id="showcase"
+    >
+      <Image
+        src={DemoPlaceholder}
+        alt="Demo Placeholder"
+        class="w-full aspect-video object-cover transition-opacity duration-300"
+        id="placeholder"
+        loading="lazy"
+      />
+
+      <div
+        class="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-300"
+        id="playButton"
+      >
+        <svg
+          class="w-20 h-20 text-white"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+      </div>
+
+      <div id="videoContainer" class="hidden">
+        <iframe
+          src=""
+          data-src="https://utfs.io/f/91p3KrFe7TXK7mC7orQ0vMCh6cLATpPdfulibqoREYmwe3BZ"
+          title="iNoted Demo Video"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
+          allowfullscreen
+          class="w-full aspect-video bg-black"
+          id="videoIframe"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-12 md:py-20 px-4">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-semibold text-slate-700 mb-4">
+        Why Choose iNoted?
+      </h2>
+      <p class="text-slate-600 max-w-4xl mx-auto text-base md:text-lg">
+        Discover how iNoted can transform your note-taking experience with these
+        powerful features
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {
+        [
+          {
+            title: "Intuitive Interface",
+            description:
+              "Enjoy a simple and clean design that allows for quick access to your notes",
+            icon: Smartphone,
+          },
+          {
+            title: "Quick Capture",
+            description:
+              "Instantly capture your thoughts with our lightning-fast editor with auto-saving",
+            icon: Zap,
+          },
+          {
+            title: "Smart Organization",
+            description:
+              "Automatically organize notes with intelligent and personalized categorization",
+            icon: FolderClosed,
+          },
+          {
+            title: "Secure Storage",
+            description:
+              "Your notes are stored completely on your device. Don't worry about data loss or privacy",
+            icon: Shield,
+          },
+          {
+            title: "Offline Access",
+            description:
+              "Keep working even without an internet connection, and access your notes from anywhere",
+            icon: WifiOff,
+          },
+          {
+            title: "Notes Sharing",
+            description:
+              "Effortlessly share your notes with friends or colleagues via various platforms",
+            icon: ExternalLink,
+          },
+        ].map((feature) => (
+          <div class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200 hover:border-primary transition-all group flex flex-col max-sm:items-center max-sm:justify-center max-sm:text-center">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+              <feature.icon class="w-6 h-6 text-primary" />
+            </div>
+            <h3 class="text-xl font-semibold text-slate-700 mb-2">
+              {feature.title}
+            </h3>
+            <p class="text-slate-600">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section
+    id="download"
+    class="py-12 md:py-20 bg-white/25 backdrop-blur-sm px-4"
+  >
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-semibold text-slate-700 mb-4">
+        Get iNoted Now
+      </h2>
+      <p class="text-slate-600 max-w-2xl mx-auto text-base md:text-lg">
+        Start your note-taking journey with iNoted. Currently available on
+        android devices for a seamless experience. Download now and stay
+        organized on-the-go!
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center justify-center gap-8">
+      <!-- Direct Download -->
+      <div
+        class="bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-slate-200 max-w-xl w-full"
+      >
+        <div class="flex flex-col items-center gap-4">
+          <Download class="w-12 h-12 text-primary" />
+          <h3 class="text-xl font-semibold text-slate-700">Direct Download</h3>
+          <p class="text-slate-600 text-center mb-4">
+            Get iNoted APK v1.0.2 for Android
+          </p>
+          <a
+            href="https://github.com/AlanNin/iNoted/releases/download/1.0.2/app-release-v1.0.2.apk"
+            class="bg-primary hover:bg-primary_hover text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-3"
+          >
+            <Download class="w-5 h-5" />
+            Download
+          </a>
+        </div>
+      </div>
+
+      <!-- Store Downloads -->
+      <div class="grid sm:grid-cols-2 gap-6 w-full max-w-xl">
+        <!-- Google Play -->
+        <div
+          class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200"
+        >
+          <div class="flex flex-col items-center gap-4 h-full">
+            <Image
+              src={PlayStoreLogo}
+              alt="playstore-icon"
+              class="w-11 h-11 p-1"
+              loading="lazy"
+            />
+            <h3 class="text-xl font-semibold text-slate-700">Android</h3>
+            <p class="text-slate-600 text-center mb-4">
+              Coming soon to Google Play
+            </p>
+            <button
+              disabled
+              class="mt-auto bg-slate-100 text-slate-500 px-6 py-2.5 rounded-lg font-medium flex items-center gap-3 cursor-not-allowed"
+            >
+              <PlayCircle class="w-5 h-5 stroke-[1.5px]" />
+              Coming Soon
+            </button>
+          </div>
+        </div>
+
+        <!-- App Store -->
+        <div
+          class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200"
+        >
+          <div class="flex flex-col items-center gap-4 h-full">
+            <Image
+              src={AppStoreLogo}
+              alt="playstore-icon"
+              class="w-11 h-11 p-1"
+              loading="lazy"
+            />
+            <h3 class="text-xl font-semibold text-slate-700">iOS</h3>
+            <p class="text-slate-600 text-center mb-4">
+              Not available on App Store
+            </p>
+            <button
+              disabled
+              class="mt-auto bg-slate-100 text-slate-500 px-6 py-2.5 rounded-lg font-medium flex items-center gap-3 cursor-not-allowed"
+            >
+              <Apple class="w-5 h-5 stroke-[1.5px]" />
+              Not Available
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-12 md:mt-20 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="py-12 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-12 gap-8 max-sm:text-center"
+      >
+        {/* Brand Section */}
+        <div
+          class="col-span-1 sm:col-span-3 md:col-span-4 space-y-6 md:space-y-8 max-sm:flex max-sm:flex-col max-sm:items-center"
+        >
+          <Image src={AppLogo} alt="iNoted" class="h-6 w-auto md:h-8" />
+          <p class="text-slate-600 text-sm max-w-xs">
+            Simple, secure, and intuitive note-taking for everyone. Built with
+            ❤️ for my wifey.
+          </p>
+          <div class="flex gap-4 max-sm:justify-center">
+            <a
+              href="https://github.com/AlanNin"
+              class="text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="sr-only">GitHub</span>
+              <Github class="w-6 h-6" />
+            </a>
+            <a
+              href="linkedin.com/in/alan-nin-659017310/"
+              class="text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="sr-only">LinkedIn</span>
+              <Linkedin class="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <nav class="col-span-1 sm:col-span-1 md:col-span-2">
+          <h3 class="font-semibold text-slate-900 mb-4">Product</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#showcase" class="text-slate-600 hover:text-primary"
+                >Showcase</a
+              >
+            </li>
+            <li>
+              <a href="#features" class="text-slate-600 hover:text-primary"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a href="#download" class="text-slate-600 hover:text-primary"
+                >Download</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="col-span-1 sm:col-span-1 md:col-span-2">
+          <h3 class="font-semibold text-slate-900 mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="https://www.alannin.dev/#home"
+                class="text-slate-600 hover:text-primary">About</a
+              >
+            </li>
+            <li class="group max-sm:flex max-sm:justify-center">
+              <a
+                href="https://www.alannin.dev/?emailModal=true#home"
+                class="text-slate-600 group-hover:text-primary flex items-center gap-2"
+              >
+                <Mail
+                  class="w-4 h-4 text-slate-600 stroke-[1px] group-hover:text-primary"
+                />
+                Email Me
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      {/* Bottom Bar */}
+      <div class="border-t border-slate-200 py-8">
+        <div
+          class="flex flex-col sm:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-slate-600 text-sm text-center">
+            &copy; {new Date().getFullYear()} NinCloud. All rights reserved.
+          </p>
+          <nav class="flex gap-6">
+            <a
+              href="/privacy"
+              class="text-slate-600 hover:text-primary text-sm"
+            >
+              Privacy
+            </a>
+            <a href="/terms" class="text-slate-600 hover:text-primary text-sm">
+              Terms
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("showcase");
+    const placeholder = document.getElementById("placeholder");
+    const playButton = document.getElementById("playButton");
+    const videoContainer = document.getElementById("videoContainer");
+    const videoIframe = document.getElementById(
+      "videoIframe"
+    ) as HTMLIFrameElement | null;
+
+    if (
+      container &&
+      placeholder &&
+      playButton &&
+      videoIframe &&
+      videoContainer
+    ) {
+      container.addEventListener("click", async () => {
+        placeholder.classList.add("opacity-0");
+        playButton.classList.add("opacity-0");
+
+        const videoUrl = videoIframe.getAttribute("data-src");
+        if (videoUrl) {
+          const urlWithAutoplay =
+            videoUrl +
+            (videoUrl.includes("?") ? "&" : "?") +
+            "autoplay=1&mute=0";
+          videoIframe.setAttribute("src", urlWithAutoplay);
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 300));
+
+        placeholder.remove();
+        playButton.remove();
+        videoContainer.classList.remove("hidden");
+
+        setTimeout(() => {
+          try {
+            if (videoIframe.contentWindow) {
+              videoIframe.contentWindow.postMessage(
+                '{"event":"command","func":"playVideo","args":""}',
+                "*"
+              );
+            }
+          } catch (e) {
+            console.log("Auto-play attempt failed:", e);
+          }
+        }, 100);
+      });
+    }
+  });
+</script>

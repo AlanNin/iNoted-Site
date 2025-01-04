@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import AppLogo from "~/assets/logo.png";
+---
+
+<nav class="w-full flex justify-between items-center p-6 sm:p-8">
+  <a href="/">
+    <Image src={AppLogo} alt="logo" class="w-auto h-5 object-contain" />
+  </a>
+  <div class="flex items-center gap-6">
+    <!-- <a
+      href="/help"
+      class="hover:text-primary_hover transition-colors duration-200 max-sm:hidden"
+      >Help</a
+    > -->
+    <a
+      href="#download"
+      class="font-medium py-2 px-6 bg-primary hover:bg-primary_hover transition-colors duration-200 text-white rounded-full"
+      >Get App</a
+    >
+  </div>
+</nav>
