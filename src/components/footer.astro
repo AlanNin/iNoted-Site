@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import AppLogo from "~/assets/logo.png";
+import { Github, Linkedin, Mail } from "lucide-astro";
+---
+
+<footer class="mt-12 md:mt-20 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="py-12 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-12 gap-8 max-sm:text-center"
+    >
+      {/* Brand Section */}
+      <div
+        class="col-span-1 sm:col-span-3 md:col-span-4 space-y-6 md:space-y-8 max-sm:flex max-sm:flex-col max-sm:items-center"
+      >
+        <Image src={AppLogo} alt="iNoted" class="h-6 w-auto md:h-8" />
+        <p class="text-slate-600 text-sm max-w-xs">
+          Simple, secure, and intuitive note-taking for everyone. Built with ❤️
+          for my wifey.
+        </p>
+        <div class="flex gap-4 max-sm:justify-center">
+          <a
+            href="https://github.com/AlanNin"
+            class="text-slate-400 hover:text-primary transition-colors"
+          >
+            <span class="sr-only">GitHub</span>
+            <Github class="w-6 h-6" />
+          </a>
+          <a
+            href="linkedin.com/in/alan-nin-659017310/"
+            class="text-slate-400 hover:text-primary transition-colors"
+          >
+            <span class="sr-only">LinkedIn</span>
+            <Linkedin class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <nav class="col-span-1 sm:col-span-1 md:col-span-2">
+        <h3 class="font-semibold text-slate-900 mb-4">Product</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="#showcase" class="text-slate-600 hover:text-primary"
+              >Showcase</a
+            >
+          </li>
+          <li>
+            <a href="#features" class="text-slate-600 hover:text-primary"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="#download" class="text-slate-600 hover:text-primary"
+              >Download</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="col-span-1 sm:col-span-1 md:col-span-2">
+        <h3 class="font-semibold text-slate-900 mb-4">Contact</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="https://www.alannin.dev/#home"
+              class="text-slate-600 hover:text-primary">About</a
+            >
+          </li>
+          <li class="group max-sm:flex max-sm:justify-center">
+            <a
+              href="https://www.alannin.dev/?emailModal=true#home"
+              class="text-slate-600 group-hover:text-primary flex items-center gap-2"
+            >
+              <Mail
+                class="w-4 h-4 text-slate-600 stroke-[1px] group-hover:text-primary"
+              />
+              Email Me
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="border-t border-slate-200 py-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-slate-600 text-sm text-center">
+          &copy; {new Date().getFullYear()} NinCloud. All rights reserved.
+        </p>
+        <nav class="flex gap-6">
+          <a href="/privacy" class="text-slate-600 hover:text-primary text-sm">
+            Privacy
+          </a>
+          <a href="/terms" class="text-slate-600 hover:text-primary text-sm">
+            Terms
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
