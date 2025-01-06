@@ -23,17 +23,20 @@ import { Image } from "astro:assets";
       class="bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-slate-200 max-w-xl w-full"
     >
       <div class="flex flex-col items-center gap-4">
-        <DownloadIcon class="w-12 h-12 text-primary" />
-        <h3 class="text-xl font-semibold text-slate-700">Direct Download</h3>
-        <p class="text-slate-600 text-center mb-4">
-          Get iNoted APK v1.0.2 for Android
-        </p>
+        <Image
+          src={PlayStoreLogo}
+          alt="playstore-icon"
+          class="w-11 h-11 p-1"
+          loading="lazy"
+        />
+        <h3 class="text-xl font-semibold text-slate-700">Google Play</h3>
+        <p class="text-slate-600 text-center mb-4">Now available on android</p>
         <a
           href="https://github.com/AlanNin/iNoted/releases/download/1.0.2/app-release-v1.0.2.apk"
-          class="bg-primary hover:bg-primary_hover text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-3"
+          class="bg-primary hover:bg-primary_hover text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center gap-3"
         >
-          <DownloadIcon class="w-5 h-5" />
-          Download
+          <PlayCircle class="w-5 h-5" />
+          Get it now
         </a>
       </div>
     </div>
@@ -45,23 +48,16 @@ import { Image } from "astro:assets";
         class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200"
       >
         <div class="flex flex-col items-center gap-4 h-full">
-          <Image
-            src={PlayStoreLogo}
-            alt="playstore-icon"
-            class="w-11 h-11 p-1"
-            loading="lazy"
-          />
-          <h3 class="text-xl font-semibold text-slate-700">Android</h3>
-          <p class="text-slate-600 text-center mb-4">
-            Coming soon to Google Play
-          </p>
-          <button
-            disabled
-            class="mt-auto bg-slate-100 text-slate-500 px-6 py-2.5 rounded-lg font-medium flex items-center gap-3 cursor-not-allowed"
+          <DownloadIcon class="w-12 h-12 text-primary" />
+          <h3 class="text-xl font-semibold text-slate-700">Direct Download</h3>
+          <p class="text-slate-600 text-center mb-4">iNoted APK v1.0.2</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.anonymous.iNoted"
+            class="mt-auto bg-primary hover:bg-primary_hover text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200 flex items-center gap-3"
           >
-            <PlayCircle class="w-5 h-5 stroke-[1.5px]" />
-            Coming Soon
-          </button>
+            <DownloadIcon class="w-5 h-5 stroke-[1.5px]" />
+            Download
+          </a>
         </div>
       </div>
 
@@ -76,10 +72,8 @@ import { Image } from "astro:assets";
             class="w-11 h-11 p-1"
             loading="lazy"
           />
-          <h3 class="text-xl font-semibold text-slate-700">iOS</h3>
-          <p class="text-slate-600 text-center mb-4">
-            Not available on App Store
-          </p>
+          <h3 class="text-xl font-semibold text-slate-700">App Store</h3>
+          <p class="text-slate-600 text-center mb-4">Not available on iOS</p>
           <button
             disabled
             class="mt-auto bg-slate-100 text-slate-500 px-6 py-2.5 rounded-lg font-medium flex items-center gap-3 cursor-not-allowed"
