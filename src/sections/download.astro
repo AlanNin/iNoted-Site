@@ -3,6 +3,11 @@ import PlayStoreLogo from "~/assets/playstore.png";
 import AppStoreLogo from "~/assets/appstore.png";
 import { Download as DownloadIcon, Apple, PlayCircle } from "lucide-astro";
 import { Image } from "astro:assets";
+
+const googlePlayUrl =
+  "https://play.google.com/store/apps/details?id=com.anonymous.iNoted";
+const directDownloadUrl =
+  "https://github.com/AlanNin/iNoted/releases/download/1.0.2/app-release-v1.0.2.apk";
 ---
 
 <section id="download" class="py-12 md:py-20 bg-white/25 backdrop-blur-sm px-4">
@@ -32,7 +37,7 @@ import { Image } from "astro:assets";
         <h3 class="text-xl font-semibold text-slate-700">Google Play</h3>
         <p class="text-slate-600 text-center mb-4">Now available on android</p>
         <a
-          href="https://github.com/AlanNin/iNoted/releases/download/1.0.2/app-release-v1.0.2.apk"
+          href={googlePlayUrl}
           class="bg-primary hover:bg-primary_hover text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center gap-3"
         >
           <PlayCircle class="w-5 h-5" />
@@ -52,7 +57,7 @@ import { Image } from "astro:assets";
           <h3 class="text-xl font-semibold text-slate-700">Direct Download</h3>
           <p class="text-slate-600 text-center mb-4">iNoted APK v1.0.2</p>
           <a
-            href="https://play.google.com/store/apps/details?id=com.anonymous.iNoted"
+            href={directDownloadUrl}
             class="mt-auto bg-primary hover:bg-primary_hover text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200 flex items-center gap-3"
           >
             <DownloadIcon class="w-5 h-5 stroke-[1.5px]" />
