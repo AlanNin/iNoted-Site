@@ -1,13 +1,17 @@
 ---
 import PlayStoreLogo from "~/assets/playstore.png";
 import AppStoreLogo from "~/assets/appstore.png";
-import { Download as DownloadIcon, Apple, PlayCircle } from "lucide-astro";
+import {
+  Download as DownloadIcon,
+  Apple,
+  PlayCircle,
+  Github,
+} from "lucide-astro";
 import { Image } from "astro:assets";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.anonymous.iNoted";
-const directDownloadUrl =
-  "https://github.com/AlanNin/iNoted/releases/download/1.0.3/app-release-v1.0.3.apk";
+const directDownloadUrl = "https://github.com/AlanNin/iNoted/releases";
 ---
 
 <section id="download" class="py-12 md:py-20 bg-white/25 backdrop-blur-sm px-4">
@@ -23,7 +27,7 @@ const directDownloadUrl =
   </div>
 
   <div class="flex flex-col items-center justify-center gap-8">
-    <!-- Direct Download -->
+    <!-- Google Play -->
     <div
       class="bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-slate-200 max-w-xl w-full"
     >
@@ -46,21 +50,20 @@ const directDownloadUrl =
       </div>
     </div>
 
-    <!-- Store Downloads -->
     <div class="grid sm:grid-cols-2 gap-6 w-full max-w-xl">
-      <!-- Google Play -->
+      <!-- Direct Download -->
       <div
         class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200"
       >
         <div class="flex flex-col items-center gap-4 h-full">
           <DownloadIcon class="w-12 h-12 text-primary" />
           <h3 class="text-xl font-semibold text-slate-700">Direct Download</h3>
-          <p class="text-slate-600 text-center mb-4">iNoted APK v1.0.3</p>
+          <p class="text-slate-600 text-center mb-4">iNoted APK from Github</p>
           <a
             href={directDownloadUrl}
             class="mt-auto bg-primary hover:bg-primary_hover text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200 flex items-center gap-3"
           >
-            <DownloadIcon class="w-5 h-5 stroke-[1.5px]" />
+            <Github class="w-5 h-5 stroke-[1.5px]" />
             Download
           </a>
         </div>
