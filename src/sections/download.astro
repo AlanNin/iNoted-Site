@@ -1,17 +1,11 @@
 ---
 import PlayStoreLogo from "~/assets/playstore.png";
 import AppStoreLogo from "~/assets/appstore.png";
-import {
-  Download as DownloadIcon,
-  Apple,
-  PlayCircle,
-  Github,
-} from "lucide-astro";
+import { Apple, PlayCircle } from "lucide-astro";
 import { Image } from "astro:assets";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.anonymous.iNoted";
-const directDownloadUrl = "https://github.com/AlanNin/iNoted/releases";
 ---
 
 <section id="download" class="py-12 md:py-20 bg-white/25 backdrop-blur-sm px-4">
@@ -27,68 +21,56 @@ const directDownloadUrl = "https://github.com/AlanNin/iNoted/releases";
   </div>
 
   <div class="flex flex-col items-center justify-center gap-8">
-    <!-- Google Play -->
     <div
-      class="bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-slate-200 max-w-xl w-full"
+      class="bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-slate-200 max-w-2xl w-full"
     >
-      <div class="flex flex-col items-center gap-4">
-        <Image
-          src={PlayStoreLogo}
-          alt="playstore-icon"
-          class="w-11 h-11 p-1"
-          loading="lazy"
-        />
-        <h3 class="text-xl font-semibold text-slate-700">Google Play</h3>
-        <p class="text-slate-600 text-center mb-4">Now available on android</p>
-        <a
-          href={googlePlayUrl}
-          class="bg-primary hover:bg-primary_hover text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center gap-3"
+      <div class="grid sm:grid-cols-2 gap-6 w-full max-w-2xl">
+        <!-- Google Play -->
+        <div
+          class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200"
         >
-          <PlayCircle class="w-5 h-5" />
-          Get it now
-        </a>
-      </div>
-    </div>
-
-    <div class="grid sm:grid-cols-2 gap-6 w-full max-w-xl">
-      <!-- Direct Download -->
-      <div
-        class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200"
-      >
-        <div class="flex flex-col items-center gap-4 h-full">
-          <DownloadIcon class="w-12 h-12 text-primary" />
-          <h3 class="text-xl font-semibold text-slate-700">Direct Download</h3>
-          <p class="text-slate-600 text-center mb-4">iNoted APK from Github</p>
-          <a
-            href={directDownloadUrl}
-            class="mt-auto bg-primary hover:bg-primary_hover text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200 flex items-center gap-3"
-          >
-            <Github class="w-5 h-5 stroke-[1.5px]" />
-            Download
-          </a>
+          <div class="flex flex-col items-center gap-4 h-full">
+            <Image
+              src={PlayStoreLogo}
+              alt="playstore-icon"
+              class="w-11 h-11 p-1"
+              loading="lazy"
+            />
+            <h3 class="text-xl font-semibold text-slate-700">Google Play</h3>
+            <p class="text-slate-600 text-center mb-4">
+              Now available on android
+            </p>
+            <a
+              href={googlePlayUrl}
+              class="mt-auto bg-primary hover:bg-primary_hover text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200 flex items-center gap-3"
+            >
+              <PlayCircle class="w-5 h-5" />
+              Get it now
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- App Store -->
-      <div
-        class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200"
-      >
-        <div class="flex flex-col items-center gap-4 h-full">
-          <Image
-            src={AppStoreLogo}
-            alt="playstore-icon"
-            class="w-11 h-11 p-1"
-            loading="lazy"
-          />
-          <h3 class="text-xl font-semibold text-slate-700">App Store</h3>
-          <p class="text-slate-600 text-center mb-4">Not available on iOS</p>
-          <button
-            disabled
-            class="mt-auto bg-slate-100 text-slate-500 px-6 py-2.5 rounded-lg font-medium flex items-center gap-3 cursor-not-allowed"
-          >
-            <Apple class="w-5 h-5 stroke-[1.5px]" />
-            Not Available
-          </button>
+        <!-- App Store -->
+        <div
+          class="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-slate-200"
+        >
+          <div class="flex flex-col items-center gap-4 h-full">
+            <Image
+              src={AppStoreLogo}
+              alt="playstore-icon"
+              class="w-11 h-11 p-1"
+              loading="lazy"
+            />
+            <h3 class="text-xl font-semibold text-slate-700">App Store</h3>
+            <p class="text-slate-600 text-center mb-4">Not available on iOS</p>
+            <button
+              disabled
+              class="mt-auto bg-slate-100 text-slate-500 px-6 py-2.5 rounded-lg font-medium flex items-center gap-3 cursor-not-allowed"
+            >
+              <Apple class="w-5 h-5 stroke-[1.5px]" />
+              Not Available
+            </button>
+          </div>
         </div>
       </div>
     </div>
